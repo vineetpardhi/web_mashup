@@ -7,17 +7,23 @@
 <style>
   
   </style>  
+
+
   </head>
 
 
   <body>
     <h1>Choose the location</h1>
-    <script src="location.js"></script>
+    <script>
+      function activePlacesSearch()
+      {
+        var input=document.getElementById('search_term');
+        var autocomplete=new google.maps.places.Autocomplete(input);
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChuYeIYITPL4mBtZMqzjkpIsNiBVG-ptY&libraries=places&callback=activatePlacesSearch"></script>
     <div class="place">
-        <select id="city" onclick="getCity()">
-          <option>mumbai</option>
-          
-        </select>
+      <label for="search_term">Enter the place</label> <input id="search_term" class="form-group"/>
     </div>
 
    </body>

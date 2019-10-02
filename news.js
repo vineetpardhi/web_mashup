@@ -1,6 +1,4 @@
 
-var xcity=document.getElementById("city").value;
-
 
 var data = null;
 
@@ -8,7 +6,7 @@ var data = null;
 
  
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://newsapi.org/v2/everything?q="+xcity+"&from=2019-10-01&to=2019-10-01&sortBy=popularity&apiKey=719cac1138af47129b6fbf607f746a6e");
+xhr.open("GET", "https://newsapi.org/v2/everything?q=mumbai&from=2019-10-01&to=2019-10-01&sortBy=popularity&apiKey=719cac1138af47129b6fbf607f746a6e");
 
 
 xhr.send();

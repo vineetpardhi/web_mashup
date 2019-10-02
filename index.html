@@ -29,22 +29,26 @@
 
 
   <body>
-    <div class="row">
-      <div class="col-sm-6">
+  
         <h1>Choose the location</h1>
-        <script src="news.js"></script>
+        <script>
+          function activePlacesSearch()
+          {
+            var input=document.getElementById('search_term');
+            var autocomplete=new google.maps.places.Autocomplete(input);
+            return input;
+          }
+        </script>
+        <script  type="text/javascript" src="https://maps.googleapis.com/maps/api/place/autocomplete/json?input=activePlacesSearch()&types=(cities)&language=in_EN&key=AIzaSyChuYeIYITPL4mBtZMqzjkpIsNiBVG-ptY"></script>
         <div class="place">
-            <select id="city" onclick="getCity()">
-              <option>mumbai</option>
-            </select>
+          <label for="search_term">Enter the place</label> 
+          <input id="search_term" class="form-control" name="term" placeholder="Search..." value="if(locals.term){%><%=term %><%}%">
         </div>
-      </div>
-      
 
 
     
 
-      <div class="col-sm-6" style="position: absolute;right:0px;top:5px;">
+      <div  style="position: absolute;right:0px;top:5px;">
           <h1>Trending news for that region</h1>
           <script src="news.js"></script>
           <div id="newsid">HI</div>
@@ -52,7 +56,7 @@
             
           </div>
       </div> 
-  </div>
+ 
 
  <!--<div style="width: 640px; height: 480px" id="mapContainer" class="col-sm-6"></div>
   <script>
