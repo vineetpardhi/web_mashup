@@ -2,11 +2,14 @@
 
 var data = null;
 
- 
-
+var city="mumbai";
+function getCity()
+{
+var city=document.getElementById("search_term").nodeValue;
+}
  
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://newsapi.org/v2/everything?q=mumbai&from=2019-10-01&to=2019-10-01&sortBy=popularity&apiKey=719cac1138af47129b6fbf607f746a6e");
+xhr.open("GET", "https://newsapi.org/v2/everything?q="+city+"&from=2019-10-02&to=2019-10-02&sortBy=popularity&apiKey=3bc87b30a60a40e6a3de082e69829788");
 
 
 xhr.send();
@@ -20,7 +23,7 @@ xhr.onload=function()
        arr_data=data.articles;
   
       document.getElementById("newsid").innerHTML= `
-      <h3 class="news">All the news</h3>
+      <h3 class="news">All the news in ${city}</h3>
       ${arr_data.map(function(arr){
         return  `
         <div class="card">

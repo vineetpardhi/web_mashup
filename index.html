@@ -25,24 +25,27 @@
         padding: 0;
       }
   </style>  
+ 
+<script>
+  function activePlacesSearch()
+  {
+    var input=document.getElementById('search_term');
+    var autocomplete=new google.maps.places.Autocomplete(input);
+    
+  }
+</script>
+<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/place/autocomplete/json?input=activePlacesSearch()&types=(cities)&language=zh-CN&key=AIzaSyChuYeIYITPL4mBtZMqzjkpIsNiBVG-ptY"></script>
   </head>
 
 
   <body>
   
         <h1>Choose the location</h1>
-        <script>
-          function activePlacesSearch()
-          {
-            var input=document.getElementById('search_term');
-            var autocomplete=new google.maps.places.Autocomplete(input);
-            return autocomplete;
-          }
-        </script>
-        <script  type="text/javascript" src="https://maps.googleapis.com/maps/api/place/autocomplete/json?input=activePlacesSearch()&types=(cities)&language=zh-CN&key=AIzaSyChuYeIYITPL4mBtZMqzjkpIsNiBVG-ptY"></script>
-        <div class="place">
+        
+        <div class="container-fluid place">
           <label for="search_term">Enter the place</label> 
-          <input id="search_term" class="form-control" name="term" placeholder="Search..." value="Vict" style="width: 50%">
+          <input id="search_term" class="form-control" name="term" placeholder="Search..." value="usa" style="width: 50%">
+          <input type="submit" class="btn btn-info" value="submit">
         </div>
 
 
@@ -52,7 +55,9 @@
           <h1>Trending news for that region</h1>
           <script src="news.js"></script>
           <div id="newsid">HI</div>
-            <div class="card"></div>
+            <div class="card">
+
+            </div>
             
           </div>
       </div> 
