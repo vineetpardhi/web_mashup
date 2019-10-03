@@ -12,7 +12,7 @@
 
 
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://newsapi.org/v2/everything?q=bitcoin&from=2019-09-03&sortBy=publishedAt&apiKey=3bc87b30a60a40e6a3de082e69829788");
+xhr.open("GET", "https://newsapi.org/v2/everything?q=mumbai&from=2019-09-03&sortBy=publishedAt&apiKey=3bc87b30a60a40e6a3de082e69829788");
 
 
 xhr.send();
