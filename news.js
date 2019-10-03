@@ -2,7 +2,7 @@
 
 var data = null;
 
- 
+ var xhr;
 
 function getCity()
 {
@@ -11,12 +11,12 @@ if(!city)
 {
 city="mumbai";
 }
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://newsapi.org/v2/everything?q="+city+"&from=2019-10-01&to=2019-10-01&sortBy=popularity&apiKey=719cac1138af47129b6fbf607f746a6e");
+xhr = new XMLHttpRequest();
+xhr.open("GET", "https://inewsapi.org/v2/everything?q="+city+"&from=2019-10-01&to=2019-10-01&sortBy=popularity&apiKey=719cac1138af47129b6fbf607f746a6e");
 
-}
+
 xhr.send();
-
+}
 
 xhr.onload=function()
 {
