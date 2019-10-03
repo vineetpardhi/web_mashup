@@ -1,6 +1,5 @@
 
 
-var data = null;
 
 var city="mumbai";
 function getCity()
@@ -13,7 +12,7 @@ xhr.open("GET", "https://newsapi.org/v2/everything?q="+city+"&from=2019-10-02&to
 
 
 xhr.send();
-
+}
 
 xhr.onload=function()
 {
