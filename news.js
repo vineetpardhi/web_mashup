@@ -1,41 +1,60 @@
-function search(loct)
+function search()
 {
-  if(!loct)
-    loct="mumbai";
-  else
-    loct=document.getElementById("search_term").nodeValue;
+  var xhr1 = new XMLHttpRequest();
+var url = "http://localhost:3000/cities";
+
+// Called whenever the readyState attribute changes 
+xhr1.onreadystatechange = function() {
+
+  // Check if fetch request is done
+  if (xhr1.readyState == 4 && xhr1.status == 200) { 
+  
+    // Parse the JSON string
+    var jsonData = JSON.parse(xhr1.responseText);
+    
+    console.log(jsonData[0]);
+    showcities(jsonData);
+    
 
 
-  fetch("https://devru-latitude-longitude-find-v1.p.rapidapi.com/latlon.php?location="+loct, {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-host": "devru-latitude-longitude-find-v1.p.rapidapi.com",
-      "x-rapidapi-key": "111b53dad3mshdac9899c1c9ab66p177177jsn35a1f623b047"
-    }
-  })
-  .then(response => {
-    console.log(responseText);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+  }
+};
 
-    var locdata=JSON.parse(this.response);
-    arr_loct_data=locdata.Results;
+xhr1.open("GET", url, true);
+xhr1.send();
 
+}
 
+function showcities(data)
+{
+  var output;
+  var i;
+
+  for(var i in data.city)
+  {
+    output +="<options>"+ data.city[i]+"</options>";
+  }
+
+  document.getElementById("city_options").innerHTML=output;
 }
 
 
 
 
 
-var city="mumbai";
+
+var city;
+
+
+
+
 function getCity()
 {
-city=document.getElementById("search_term").nodeValue;
+  if(!city)
+  city="mumbai";
 }
  
+
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "https://newsapi.org/v2/everything?q="+city+"&from=2019-10-02&to=2019-10-02&sortBy=popularity&apiKey=3bc87b30a60a40e6a3de082e69829788");
 

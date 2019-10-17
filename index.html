@@ -34,8 +34,7 @@
     
   }
 </script>
-<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/place/autocomplete/json?input=activePlacesSearch()&types=(cities)&language=zh-CN&key=AIzaSyChuYeIYITPL4mBtZMqzjkpIsNiBVG-ptY"></script>
-  </head>
+</head>
 
 
   <body>
@@ -43,11 +42,11 @@
         <h1>Choose the location</h1>
         
         <div class="container-fluid place">
-          <label for="search_term">Enter the place</label> 
+          <label for="city_options">Enter the place</label> 
          
-            <input id="search_term" class="form-control" name="term" placeholder="Search..." value="" style="width: 50%">
-            <select class="city_options">    
-           </select>
+            <select class="form-control" id="city_options" name="city_options" onclick="search()" style="width: 50%;"> 
+        
+            </select>
             <br>
           <input type="submit" class="btn btn-info" value="submit" onclick="getCity()">
         </div>
